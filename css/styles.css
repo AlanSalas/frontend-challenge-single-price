@@ -1,0 +1,132 @@
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-size: 16px;
+    font-family: 'Karla', sans-serif;
+    background-color: var(--lightGray);
+}
+
+:root {
+    --cyan: hsl(179, 62%, 43%);
+    --cyanLight: #4ABEBD;
+    --brightYellow: hsl(71, 73%, 54%);
+    --lightGray: hsl(204, 43%, 93%);
+    --grayishBlue: hsl(218, 22%, 67%);
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 10px;
+    background-color: white;
+
+
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "header header"
+    "card-1 card-2";
+}
+
+.container__wrapper {
+    padding: calc(40px - 0.67em) 40px calc(40px - 1em) 40px;
+}
+
+.container__header {
+    grid-area: header;
+}
+
+.container__header h1 {
+    color: var(--cyan);
+}
+
+.container__header h4 {
+    color: var(--brightYellow);
+    font-size: 1.2em;
+}
+
+.container__header p {
+    color: var(--grayishBlue);
+    font-size: 1.1em;
+    line-height: 1.5em;
+}
+
+.container__card-1 {
+    grid-area: card-1;
+    background-color: var(--cyan);
+    border-bottom-left-radius: 10px;
+}
+
+.card__wrapper {
+    padding: 20px 40px 40px 40px;
+}
+
+.card__wrapper h4 {
+    color: var(--lightGray);
+    font-size: 1.5em;
+}
+
+.container__card-1 .price-info {
+    display: flex;
+    align-items: center;
+}
+
+.container__card-1 .price {
+    font-size: 2.5em;
+    font-weight: 700;
+    margin-right: .5em;
+    color: white;
+}
+
+.container__card-1 .period {
+    color: var(--lightGray);
+    font-size: 1.1em;
+}
+
+.container__card-1 p {
+    color: var(--lightGray);
+    font-size: 1.14em;
+}
+
+.container__card-1 button {
+    border: none;
+    outline: none;
+    width: 100%;
+    margin-top: 15px;
+    padding: 15px 0;
+    border-radius: 10px;
+    font-size: 1.16em;
+    font-weight: 700;
+    color: white;
+    background-color: var(--brightYellow);
+}
+
+.container__card-2 {
+    grid-area: card-2;
+    background-color: var(--cyanLight);
+    border-bottom-right-radius: 10px;
+}
+
+.container__card-2 ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.container__card-2 ul li {
+    color: var(--lightGray);
+    font-size: 1.1em;
+    line-height: 1.4em;
+}
+
+footer {
+    text-align: center;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+}
