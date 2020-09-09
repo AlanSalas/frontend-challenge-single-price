@@ -16,13 +16,16 @@ body {
 }
 
 .container {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
+    margin: 100px auto;
+    max-width: 700px;
+    box-shadow: 0px 6px 16px 0px rgba(156,156,156,1);
+    border-radius: 20px;
+    background-color: transparent;
+}
+
+.card {
     border-radius: 10px;
     background-color: white;
-
 
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -31,67 +34,64 @@ body {
     "card-1 card-2";
 }
 
-.container__wrapper {
+.card__wrapper {
     padding: calc(40px - 0.67em) 40px calc(40px - 1em) 40px;
-}
-
-.container__header {
     grid-area: header;
 }
 
-.container__header h1 {
+.card__header h1 {
     color: var(--cyan);
 }
 
-.container__header h4 {
+.card__header h4 {
     color: var(--brightYellow);
     font-size: 1.2em;
 }
 
-.container__header p {
+.card__header p {
     color: var(--grayishBlue);
     font-size: 1.1em;
     line-height: 1.5em;
 }
 
-.container__card-1 {
+.subscription {
     grid-area: card-1;
     background-color: var(--cyan);
     border-bottom-left-radius: 10px;
 }
 
-.card__wrapper {
+.sub__wrapper {
     padding: 20px 40px 40px 40px;
 }
 
-.card__wrapper h4 {
+.sub__wrapper h4 {
     color: var(--lightGray);
-    font-size: 1.5em;
-}
+    font-size: 1.3em;
+} 
 
-.container__card-1 .price-info {
+.subscription .price-info {
     display: flex;
     align-items: center;
 }
 
-.container__card-1 .price {
+.subscription .price {
     font-size: 2.5em;
     font-weight: 700;
-    margin-right: .5em;
+    margin-right: .3em;
     color: white;
 }
 
-.container__card-1 .period {
+.subscription .period {
     color: var(--lightGray);
     font-size: 1.1em;
 }
 
-.container__card-1 p {
+.subscription p {
     color: var(--lightGray);
-    font-size: 1.14em;
+    font-size: 1.12em;
 }
 
-.container__card-1 button {
+.subscription button {
     border: none;
     outline: none;
     width: 100%;
@@ -102,21 +102,22 @@ body {
     font-weight: 700;
     color: white;
     background-color: var(--brightYellow);
+    box-shadow: 0px 11px 20px -4px rgba(66, 66, 66, 0.411);
 }
 
-.container__card-2 {
+.why {
     grid-area: card-2;
     background-color: var(--cyanLight);
     border-bottom-right-radius: 10px;
 }
 
-.container__card-2 ul {
+.why ul {
     list-style: none;
     margin: 0;
     padding: 0;
 }
 
-.container__card-2 ul li {
+.why ul li {
     color: var(--lightGray);
     font-size: 1.1em;
     line-height: 1.4em;
@@ -125,8 +126,66 @@ body {
 footer {
     text-align: center;
     width: 100%;
-    position: absolute;
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
+}
+
+@media (max-width: 992px) {
+
+    .container {
+        margin: 30px auto;
+    }
+
+    .card {
+        grid-template-columns: 1fr;
+        grid-template-areas: 
+        "header"
+        "card-1"
+        "card-2";
+    }
+
+    .card__wrapper {
+        padding: 20px;
+    }
+
+    .card__header h1 {
+        font-size: 1.3em;
+    }
+
+    .card__header h4 {
+        font-size: 1em;
+    }
+
+    .card__header p {
+        font-size: .9em;
+        line-height: 2em;
+    }
+
+    .subscription {
+        border-bottom-left-radius: 0px;
+    }
+
+    .subscription button {
+        font-size: 1em;
+    }
+
+    .sub__wrapper {
+        padding: 20px;
+    }
+
+    .sub__wrapper h4 {
+        font-size: 1.3em;
+    }
+
+    .why {
+        border-bottom-left-radius: 10px;
+    }
+
+    footer {
+        font-size: .9em;
+    }
+}
+
+@media (max-width: 768px) {
+    .container {
+        margin: 30px 25px;
+    }
 }
